@@ -1,0 +1,15 @@
+python3 -m pip install virtualenv
+python3 -m venv quan
+source quan/bin/activate
+
+pip install opencv-python
+pip install opencv-python-headless
+pip install opencv-contrib-python==4.1.0.25
+sudo apt-get update
+sudo apt-get install libhdf5-serial-dev
+sudo apt-get install libhdf5-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libqt4-test
+sudo apt-get install python3-pyqt
+sudo apt-get install libqtgui4
+sudo apt-get install libjasper-dev

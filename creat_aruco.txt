@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+import numpy as np
+import cv2
+import  os
+import cv2.aruco as aruco
+# Select a predefined dictionary in the aruco module to create a dictionary object
+# This dictionary is composed of 250 markers, each of which is 5*5bits in size.
+aruco_dict = aruco.Dictionary_get(aruco.DICT_ARUCO_ORIGINAL)
+img = np.random.random((200, 200))
+# marker can be generated using the drawMarker() function.
+# The first parameter is the dictionary object created earlier.
+# The second parameter is the id of the marker. In this example, the 23rd marker of the dictionary DICT_6X6_250 is selected.
+# The third parameter, 200, is the size of the output Marker image. In this example, the output image will be 200x200 pixels. To avoid distortion, this parameter is preferably proportional to the number of bits + boundary.
+# The fourth parameter is the output image.
+# The last parameter is an optional parameter that specifies the size of the Marer black border. This size is proportional to the number of digits. For example, a value of 2 means that the width of the border will be a multiple of 2. The default value is 1.
+img = aruco.drawMarker(aruco_dict, 2, 200, img, 1)
+cv2.imshow("img", img)
+cv2.imwrite("ARUCO2.jpg", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
